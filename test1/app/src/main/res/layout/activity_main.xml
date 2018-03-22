@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.restpod.podmonitor.MainActivity"
+    android:padding="20dp">
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/txtCurrentTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/txtTemp"
+            android:text="Current Temperature:"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/txtTemp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:text="- °F"
+            android:gravity="right"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/txtStatus1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="30dp"
+            android:text="System Ready"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/txtStatus2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/txtStatus1"
+            android:text=""
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/txtArduino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtStatus2"
+            android:text="_"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtPodGuid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtLastUpdatedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txtPodGuid"
+            android:layout_alignParentEnd="true"
+            android:text="2/28/18 7:45 AM" />
+
+        <TextView
+            android:id="@+id/txtSensorError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txtLastUpdatedDate"
+            android:layout_alignParentEnd="true"
+            android:text=""
+            android:textColor="@android:color/holo_red_light"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtApiError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txtSensorError"
+            android:layout_alignParentEnd="true"
+            android:text="v2.13"
+            android:textColor="@android:color/holo_red_light"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtLastUpdated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/txtLastUpdatedDate"
+            android:layout_toStartOf="@+id/txtLastUpdatedDate"
+            android:text="Last Updated:" />
+
+        <TextView
+            android:id="@+id/txtPodId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/txtPodGuid"
+            android:layout_toStartOf="@+id/txtPodGuid"
+            android:text="Pod ID:"
+            android:textSize="20sp" />
+
+        <Switch
+            android:id="@+id/switchPumpOn"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:defaultValue="false"
+            android:dependency="turn_pump_on"
+            android:key="turn_pump_on"
+            android:text="Reboot"
+            android:textSize="30sp" />
+
+      <Switch
+            android:id="@+id/switchPodOverride"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/switchPumpOn"
+            android:layout_alignParentStart="true"
+            android:defaultValue="false"
+            android:key="pod_override"
+            android:text="Check For Update"
+            android:textSize="30sp" />
+
+        <Switch
+            android:id="@+id/switchDownloadMusic"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/switchPodOverride"
+            android:layout_alignParentStart="true"
+            android:defaultValue="false"
+            android:key="download_music"
+            android:text="Download Music"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+
+
